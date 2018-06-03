@@ -17,6 +17,22 @@ namespace RPAPI.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
 
+            modelBuilder.Entity("RPAPI.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("PasswordHash");
+
+                    b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("RPAPI.Models.Value", b =>
                 {
                     b.Property<int>("Id")

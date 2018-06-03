@@ -9,7 +9,7 @@ using System;
 namespace RPAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180530192025_InitialCreate")]
+    [Migration("20180603113347_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,6 +17,22 @@ namespace RPAPI.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
+
+            modelBuilder.Entity("RPAPI.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("PasswordHash");
+
+                    b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
 
             modelBuilder.Entity("RPAPI.Models.Value", b =>
                 {
