@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RPAPI.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
