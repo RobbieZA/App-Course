@@ -1,21 +1,11 @@
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-default">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">RetailPulse</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Matches</a></li>
+    <ul class="navbar-toggle collapsed" data-toggle="collapse" datatarget="#navbar" *ngIf="loggedIn()">
+      <li><a href="#">Matches</a></li>
       <li><a href="#">List</a></li>
       <li><a href="#">Messages</a></li>
     </ul>
@@ -35,20 +25,18 @@
     </form>
 
     <ul *ngIf="loggedIn()" class="nav navbar-form navbar-right">
-      <li><a (click)="logout()">Logout></a></li>
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" 
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Welcome User <span class="caret"></span>
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+          Welcome {{authService.decodedToken?.unique_name | titlecase}}
+          <span class="caret"></span>
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit Profile</a>
-          <a (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
-        </div>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#"><span class="fa fa-user"></span> Edit Profile</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a (click)="logout()" class="dropdown-item" href="#"><span class="fa fa-sign-out"></span> Logout</a></li>
+        </ul>
       </div>
     </ul>
-
   </div>
 </nav>
-</body>
-</html>
