@@ -1,42 +1,51 @@
 
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">RetailPulse</a>
-    </div>
-    <ul class="navbar-toggle collapsed" data-toggle="collapse" datatarget="#navbar" *ngIf="loggedIn()">
-      <li><a href="#">Matches</a></li>
-      <li><a href="#">List</a></li>
-      <li><a href="#">Messages</a></li>
-    </ul>
-    
-    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="navbar-form navbar-right" action="/action_page.php" (ngSubmit)="login()">
-      <div class="input-group">
-      	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input id="username" type="username" #username="ngModel" class="form-control" required name="username" 
-        [(ngModel)]="model.username" name="email" value="" placeholder="Email Address">                                        
-      </div>
-      <div class="input-group">
-      	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input id="password" type="password" #password="ngModel" class="form-control" required name="password" 
-        [(ngModel)]="model.password" name="password" value="" placeholder="Password">                                        
-      </div>
-      <button type="submit" [disabled]="!loginForm.valid" class="btn btn-danger">Submit</button>
-    </form>
-
-    <ul *ngIf="loggedIn()" class="nav navbar-form navbar-right">
-      <div class="btn-group" dropdown>
-        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-          Welcome {{authService.decodedToken?.unique_name | titlecase}}
-          <span class="caret"></span>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-            role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item" href="#"><span class="fa fa-user"></span> Edit Profile</a></li>
-          <li class="divider dropdown-divider"></li>
-          <li role="menuitem"><a (click)="logout()" class="dropdown-item" href="#"><span class="fa fa-sign-out"></span> Logout</a></li>
-        </ul>
+        <a class="navbar-brand" [routerLink]="['/home']">RetailPulse</a>
       </div>
-    </ul>
-  </div>
-</nav>
+
+      <form *ngIf="!loggedIn()" #loginForm="ngForm" class="navbar-form navbar-right" (ngSubmit)="login()">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="username" type="username" #username="ngModel" class="form-control" required name="username" 
+          [(ngModel)]="model.username" name="email" value="" placeholder="Email Address">                                        
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" #password="ngModel" class="form-control" required name="password" 
+          [(ngModel)]="model.password" name="password" value="" placeholder="Password">                                        
+        </div>
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-danger">Sign in</button>
+      </form>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" *ngIf="loggedIn()">
+          <li routerLinkActive="active"><a [routerLink]="['/users']">Matches</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['/list']">List</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['/messages']">Messages</a></li>
+        </ul>
+        <ul *ngIf="loggedIn()" class="nav navbar-form navbar-right">
+            <div class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+                  Welcome {{authService.decodedToken?.unique_name | titlecase}}
+                  <span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><a class="dropdown-item" href="#"><span class="fa fa-user"></span> Edit Profile</a></li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><a (click)="logout()" class="dropdown-item" href="#"><span class="fa fa-sign-out"></span> Logout</a></li>
+                </ul>
+              </div>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
