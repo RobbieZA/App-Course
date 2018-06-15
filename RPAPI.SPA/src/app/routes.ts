@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
             {path: 'messages', component: MessagesComponent},
             {path: 'list', component: ListsComponent}
         ]
-    }
+    },
     {path: 'users', component: UserListComponent, canActivate: [AuthGuard]},
     {path: 'messages', component: MessagesComponent},
     {path: 'list', component: ListsComponent},

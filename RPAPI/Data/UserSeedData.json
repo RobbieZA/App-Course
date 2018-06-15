@@ -1,0 +1,112 @@
+[
+  {
+    "Username": "Blanca",
+    "IDNum": "123456789012",
+    "emailAddr": "blancavang@pigzart.com",
+    "cellNum": "111231234",
+    "role": "guest",
+    "isEnabled": true,
+    "Gender": "female",
+    "DateOfBirth": "1970-08-18",
+    "Password": "password",
+    "KnownAs": "Blanca",
+    "Created": "2017-06-02",
+    "City": "Stouchsburg",
+    "Country": "Kyrgyzstan",
+    "Photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/women/96.jpg",
+        "isMain": true,
+        "description": "Aute officia velit Lorem dolore sint."
+      }
+    ]
+  },
+  {
+    "Username": "Julia",
+    "IDNum": "123456789012",
+    "emailAddr": "juliavang@pigzart.com",
+    "cellNum": "111231234",
+    "role": "guest",
+    "isEnabled": true,
+    "Gender": "female",
+    "DateOfBirth": "1997-03-27",
+    "Password": "password",
+    "KnownAs": "Julia",
+    "Created": "2017-02-05",
+    "City": "Leland",
+    "Country": "Ireland",
+    "Photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/women/83.jpg",
+        "isMain": true,
+        "description": "Non sit ullamco amet ipsum labore mollit velit cillum minim."
+      }
+    ]
+  },
+  {
+    "Username": "Serena",
+    "IDNum": "123456789012",
+    "emailAddr": "serenavang@pigzart.com",
+    "cellNum": "111231234",
+    "role": "guest",
+    "isEnabled": true,
+    "Gender": "female",
+    "DateOfBirth": "1966-07-16",
+    "Password": "password",
+    "KnownAs": "Serena",
+    "Created": "2017-03-15",
+    "City": "Yardville",
+    "Country": "Uruguay",
+    "Photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/women/27.jpg",
+        "isMain": true,
+        "description": "Velit consectetur do non irure laboris fugiat enim eu Lorem consectetur."
+      }
+    ]
+  },
+  {
+    "Username": "Rosario",
+    "IDNum": "123456789012",
+    "emailAddr": "rosariovang@pigzart.com",
+    "cellNum": "111231234",
+    "role": "guest",
+    "isEnabled": true,
+    "Gender": "female",
+    "DateOfBirth": "1985-01-27",
+    "Password": "password",
+    "KnownAs": "Rosario",
+    "Created": "2017-01-05",
+    "City": "Bentley",
+    "Country": "Greenland",
+    "Photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/women/45.jpg",
+        "isMain": true,
+        "description": "Proident proident ipsum culpa minim nostrud."
+      }
+    ]
+  },
+  {
+    "Username": "Susie",
+    "IDNum": "123456789012",
+    "emailAddr": "susievang@pigzart.com",
+    "cellNum": "111231234",
+    "role": "guest",
+    "isEnabled": true,
+    "Gender": "female",
+    "DateOfBirth": "1978-09-20",
+    "Password": "password",
+    "KnownAs": "Susie",
+    "Created": "2017-04-18",
+    "City": "Greenbush",
+    "Country": "Israel",
+    "Photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/women/63.jpg",
+        "isMain": true,
+        "description": "Reprehenderit duis excepteur minim culpa incididunt minim reprehenderit consequat sit."
+      }
+    ]
+  }
+]
