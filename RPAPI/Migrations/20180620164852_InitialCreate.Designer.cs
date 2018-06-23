@@ -10,7 +10,7 @@ using System;
 namespace RPAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180615183947_InitialCreate")]
+    [Migration("20180620164852_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

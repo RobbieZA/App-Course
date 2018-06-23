@@ -1,0 +1,65 @@
+.panel-body {
+    padding: 5px;
+}
+
+.panel-body img {
+    width: 100%;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.836);
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+h5 small {
+    font-weight: bold;
+    font-size: 12px;
+    font-style: italic;
+}
+
+img {
+    transform: scale(1, 1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.panel:hover img {
+    transform: scale(1.2, 1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 0.8;
+}
+
+.panel-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.user-icons {
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0;
+}
+
+.panel:hover .user-icons {
+    bottom: 0;
+    opacity: 1;
+}
+
+.animate {
+    transition: all 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+.btn {
+    padding: 2px 4px;
+    font-size:90%;
+    line-height: 1;
+    }
+}

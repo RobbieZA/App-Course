@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 
 @Injectable()
@@ -21,11 +23,11 @@ constructor(private http: Http) {}
                 console.log(this.decodedToken);
                 this.userToken = user.tokenString;
             }
-        });
+        }).catch(this.handleError);
     }
 
     register(model: any) {
-        return this.http.post(this.baseUrl + 'register', model, this.requestOptions());
+        return this.http.post(this.baseUrl + 'register', model, this.requestOptions()).catch(this.handleError);
     }
 
     loggedIn() {
@@ -45,12 +47,12 @@ constructor(private http: Http) {}
         const serverError = error.json();
         let modelStateErrors = '';
         if (serverError) {
-for (const key in serverError) {
-    if (serverError[key]) {
-        modelStateErrors += serverError[key] + '\n';
-    }
-}
+            for (const key in serverError) {
+                if (serverError[key]) {
+                    modelStateErrors += serverError[key] + '\n';
+                }
+            }
         }
-        return serverError();
+        return Observable.throw(modelStateErrors || 'ServerError');
     }
 }

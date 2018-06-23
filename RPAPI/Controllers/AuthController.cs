@@ -48,6 +48,9 @@ namespace RPAPI.Controllers
 
         public async Task<IActionResult> Login([FromBody]UserForLoginDto UserForLoginDto)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var userFromRepo = await _repo.Login(UserForLoginDto.Username.ToLower(), UserForLoginDto.Password);
 
             if (userFromRepo == null)
